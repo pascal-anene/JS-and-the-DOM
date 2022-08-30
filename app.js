@@ -1,30 +1,28 @@
 // const nanodegreeCard = document.querySelector('.card');
 
-const mainHeading = document.querySelector('h1');
-const otherHeading = document.querySelector('h4');
-const excitedText = document.createElement('span');
+// const mainHeading = document.querySelector('h1');
+// const otherHeading = document.querySelector('h4');
+// const excitedText = document.createElement('span');
 
-excitedText.textContent = '!!!';
-mainHeading.appendChild(excitedText);
-otherHeading.appendChild(excitedText);
+// excitedText.textContent = '!!!';
+// mainHeading.appendChild(excitedText);
+// otherHeading.appendChild(excitedText);
 
 
-// Creating a New Community Content
+// // Creating a New Community Content
 
-const communitySection = document.querySelector('.testimonials');
+// const communitySection = document.querySelector('.testimonials');
 
-const adviceHeading = document.createElement('h2');
+// const adviceHeading = document.createElement('h2');
 
-adviceHeading.innerHTML = "<strong><em>Advice For New Udacity Students</em><strong>";
+// adviceHeading.innerHTML = "<strong><em>Advice For New Udacity Students</em><strong>";
 
-communitySection.appendChild(adviceHeading);
+// communitySection.appendChild(adviceHeading);
 
-const adviceSentence = document.createElement('p');
-adviceSentence.textContent = "Do Not Give Up! Just Keep Goind!!";
+// const adviceSentence = document.createElement('p');
+// adviceSentence.textContent = "Do Not Give Up! Just Keep Goind!!";
 
-adviceHeading.insertAdjacentElement("afterend",adviceSentence);
-
-// Three Ways to Remove an Element
+// adviceHeading.insertAdjacentElement("afterend",adviceSentence);
 
 /**
  * 
@@ -34,3 +32,98 @@ adviceHeading.insertAdjacentElement("afterend",adviceSentence);
  */
 
 
+// Change Styling of Buttons using buttons
+
+// const buttonElement = document.querySelector('#start-now');
+// buttonElement.style.cssText = 'background:#2015ff ; border-radius:5rem ';
+
+// //Change Styling of Page background 
+
+// const heroSection = document.querySelector('.hero--homepage');
+// heroSection.classList.add('new-hero');
+
+// // Change Styling of Card Sections
+
+// const cardElements = document.getElementsByClassName('card');
+
+// for(let i = 0; i < cardElements.length; i++){
+
+//     cardElements[i].classList.add('new-card');
+
+// }
+
+// Alternative way of Styling Card
+// We could have used querySelectorAll() method which returns a NodesList
+
+// const cardElements = document.querySelectorAll(); 
+// then use the normal for loop to add the new-card class using classList.add()
+
+
+/**
+ * Lesson 3 Practice Sessions: Events 
+ */
+
+
+
+// document.addEventListener('click', function(){
+
+//     const heading = document.querySelector('h1');
+
+//     heading.style.backgroundColor = 'red';
+
+//     console.log("LogMessage","This Page was clicked and color changed");
+
+// })
+
+
+/**
+ * Testing Quize Code
+ */
+
+// document.addEventListener('keypress', function(){
+
+//     document.body.remove(); 
+// })
+
+/**
+ * More Practice on Udacity
+ * Practicing Mouse Events
+ * This can be done in two (or actually maybe more, hehe) ways
+ * First Option
+ */
+
+
+
+// const heading = document.querySelector('h1');
+
+// heading.addEventListener('mouseenter', function(){
+//     heading.textContent = "Build an AR App";
+// })
+
+// heading.addEventListener('mouseleave', function(){
+//     heading.textContent = "Learn ARKit";
+// })
+
+/**
+ * More Practice on Udacity
+ * Practicing Mouse Events
+ * Second Option
+ */
+
+// Select the h1 element
+const heading = document.querySelector('h1');
+
+//Retrieve the Original Text and store in a variable 
+const originalText = heading.textContent; 
+
+//Declare and store the new text
+const updatedText = "Build an AR App";
+
+//Add an event listener with event type to the event target (h1)
+heading.addEventListener('mouseover', function(){
+    heading.textContent = updatedText;
+})
+
+heading.addEventListener('mouseout', function(){
+    heading.textContent = originalText;
+})
