@@ -110,20 +110,49 @@
  * Second Option
  */
 
-// Select the h1 element
-const heading = document.querySelector('h1');
+// // Select the h1 element
+// const heading = document.querySelector('h1');
 
-//Retrieve the Original Text and store in a variable 
-const originalText = heading.textContent; 
+// //Retrieve the Original Text and store in a variable 
+// const originalText = heading.textContent; 
 
-//Declare and store the new text
-const updatedText = "Build an AR App";
+// //Declare and store the new text
+// const updatedText = "Build an AR App";
 
-//Add an event listener with event type to the event target (h1)
-heading.addEventListener('mouseover', function(){
-    heading.textContent = updatedText;
-})
+// //Add an event listener with event type to the event target (h1)
+// heading.addEventListener('mouseover', function(){
+//     heading.textContent = updatedText;
+// })
 
-heading.addEventListener('mouseout', function(){
-    heading.textContent = originalText;
-})
+// heading.addEventListener('mouseout', function(){
+//     heading.textContent = originalText;
+// })
+
+
+/**
+ * Practicing Finding Event Listeners with Dev Tools
+ */
+
+// document.addEventListener('keypress', function(){
+//     console.log("removing first child")
+//     document.querySelector('#contain-all').firstElementChild.remove();
+// })
+
+/**
+ * Practice: Removing one of the featured modules
+ */
+
+//select hero module element 
+const featuredProgramSection = document.querySelector('.hero__module');
+
+//define function to remove element 
+function removeElementOnce(){
+    featuredProgramSection.lastElementChild.remove();
+    document.removeEventListener('keypress', removeElementOnce)
+}
+
+// add an event listener to the document 
+document.addEventListener('keypress', removeElementOnce); 
+
+// to respond to the event just once we add removeEventListener() to the function above
+
