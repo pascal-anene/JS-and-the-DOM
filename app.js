@@ -8,7 +8,6 @@
 // mainHeading.appendChild(excitedText);
 // otherHeading.appendChild(excitedText);
 
-
 // // Creating a New Community Content
 
 // const communitySection = document.querySelector('.testimonials');
@@ -25,19 +24,18 @@
 // adviceHeading.insertAdjacentElement("afterend",adviceSentence);
 
 /**
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
  */
-
 
 // Change Styling of Buttons using buttons
 
 // const buttonElement = document.querySelector('#start-now');
 // buttonElement.style.cssText = 'background:#2015ff ; border-radius:5rem ';
 
-// //Change Styling of Page background 
+// //Change Styling of Page background
 
 // const heroSection = document.querySelector('.hero--homepage');
 // heroSection.classList.add('new-hero');
@@ -55,15 +53,12 @@
 // Alternative way of Styling Card
 // We could have used querySelectorAll() method which returns a NodesList
 
-// const cardElements = document.querySelectorAll(); 
+// const cardElements = document.querySelectorAll();
 // then use the normal for loop to add the new-card class using classList.add()
 
-
 /**
- * Lesson 3 Practice Sessions: Events 
+ * Lesson 3 Practice Sessions: Events
  */
-
-
 
 // document.addEventListener('click', function(){
 
@@ -75,14 +70,13 @@
 
 // })
 
-
 /**
  * Testing Quize Code
  */
 
 // document.addEventListener('keypress', function(){
 
-//     document.body.remove(); 
+//     document.body.remove();
 // })
 
 /**
@@ -91,8 +85,6 @@
  * This can be done in two (or actually maybe more, hehe) ways
  * First Option
  */
-
-
 
 // const heading = document.querySelector('h1');
 
@@ -113,8 +105,8 @@
 // // Select the h1 element
 // const heading = document.querySelector('h1');
 
-// //Retrieve the Original Text and store in a variable 
-// const originalText = heading.textContent; 
+// //Retrieve the Original Text and store in a variable
+// const originalText = heading.textContent;
 
 // //Declare and store the new text
 // const updatedText = "Build an AR App";
@@ -127,7 +119,6 @@
 // heading.addEventListener('mouseout', function(){
 //     heading.textContent = originalText;
 // })
-
 
 /**
  * Practicing Finding Event Listeners with Dev Tools
@@ -142,17 +133,16 @@
  * Practice: Removing one of the featured modules
  */
 
-//select hero module element 
-const featuredProgramSection = document.querySelector('.hero__module');
+//select hero module element
+const featuredProgramSection = document.querySelector(".hero__module");
 
-//define function to remove element 
-function removeElementOnce(){
-    featuredProgramSection.lastElementChild.remove();
-    document.removeEventListener('keypress', removeElementOnce)
+//define function to remove element
+function removeElementOnce() {
+  featuredProgramSection.lastElementChild.remove();
+  document.removeEventListener("keypress", removeElementOnce);
 }
 
-// add an event listener to the document 
-document.addEventListener('keypress', removeElementOnce); 
+// add an event listener to the document
+document.addEventListener("keypress", removeElementOnce);
 
 // to respond to the event just once we add removeEventListener() to the function above
-
