@@ -134,15 +134,34 @@
  */
 
 //select hero module element
-const featuredProgramSection = document.querySelector(".hero__module");
+// const featuredProgramSection = document.querySelector(".hero__module");
 
-//define function to remove element
-function removeElementOnce() {
-  featuredProgramSection.lastElementChild.remove();
-  document.removeEventListener("keypress", removeElementOnce);
-}
+// //define function to remove element
+// function removeElementOnce() {
+//   featuredProgramSection.lastElementChild.remove();
+//   document.removeEventListener("keypress", removeElementOnce);
+// }
 
-// add an event listener to the document
-document.addEventListener("keypress", removeElementOnce);
+// // add an event listener to the document
+// document.addEventListener("keypress", removeElementOnce);
 
 // to respond to the event just once we add removeEventListener() to the function above
+
+/**
+ * Practicing Event Phases and event object manipulation 
+ * 
+ */
+
+// Select the Classroom Button Element
+ const link = document.querySelector('#ga-99cff7');
+
+ // const link = document.querySelector('#my-classroom');
+
+ // Attach a listener to the button link with event referenced
+ 
+ link.addEventListener('click', function(event){
+    event.preventDefault(); 
+    console.log("Oops You stayed on the current page");
+});
+
+
