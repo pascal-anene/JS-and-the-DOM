@@ -196,7 +196,7 @@
 const myCustomDiv = document.createElement("div");
 
 function respondToTheClick(){
-    console.log("This paragraph was clicked")
+    console.log("This paragraph was clicked ");
 }
 
 // Use a for loop to create 200 paragrpah elements with text content 
