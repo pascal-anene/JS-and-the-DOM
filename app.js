@@ -148,20 +148,46 @@
 // to respond to the event just once we add removeEventListener() to the function above
 
 /**
- * Practicing Event Phases and event object manipulation 
- * 
+ * Practicing Event Phases and event object manipulation
+ *
  */
 
-// Select the Classroom Button Element
- const link = document.querySelector('#ga-99cff7');
+// Select the Classroom Button Element (this did not work for some reason)
+//  const link = document.querySelector('#ga-99cff7');
 
- // const link = document.querySelector('#my-classroom');
+//  // const link = document.querySelector('#my-classroom');
 
- // Attach a listener to the button link with event referenced
- 
- link.addEventListener('click', function(event){
-    event.preventDefault(); 
-    console.log("Oops You stayed on the current page");
-});
+//  // Attach a listener to the button link with event referenced
 
+//  link.addEventListener('click', function(event){
+//     event.preventDefault();
+//     console.log("Oops You stayed on the current page");
+// });
 
+/**
+ * Practicing Multiple Listeners with Loops
+ */
+
+// Create a div element
+const myCustomDiv = document.createElement("div");
+
+// Use a for loop to create 200 paragrpah elements with text content 
+for (let i = 1; i <= 200; i++) {
+  const paragraph = document.createElement("p");
+
+  paragraph.textContent = "This is paragraph: " + i;
+
+  // Add event listener to each paragraph created
+  paragraph.addEventListener('click',function respondToTheClick(){
+      console.log("This paragraph was clicked");
+  })
+
+  // Append each paragraph as the last child of the div element
+  myCustomDiv.appendChild(paragraph);
+}
+
+document.body.appendChild(myCustomDiv);
+
+/**
+ * First Step to Refactoring the Code above
+ */
