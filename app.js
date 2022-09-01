@@ -193,6 +193,33 @@
  */
 
 // Create a div element
+// const myCustomDiv = document.createElement("div");
+
+// function respondToTheClick(){
+//     console.log("This paragraph was clicked ");
+// }
+
+// // Use a for loop to create 200 paragrpah elements with text content 
+// for (let i = 1; i <= 200; i++) {
+//   const paragraph = document.createElement("p");
+
+//   paragraph.textContent = "This is paragraph: " + i;
+
+//   // Add event listener to each paragraph created
+//   paragraph.addEventListener('click',respondToTheClick);
+
+//   // Append each paragraph as the last child of the div element
+//   myCustomDiv.appendChild(paragraph);
+// }
+
+// document.body.appendChild(myCustomDiv);
+
+/**
+ * Second Step to Refactoring the Code above
+ * Attaching the Event Listener to the div element instead
+ */
+
+// Create a div element
 const myCustomDiv = document.createElement("div");
 
 function respondToTheClick(){
@@ -205,11 +232,16 @@ for (let i = 1; i <= 200; i++) {
 
   paragraph.textContent = "This is paragraph: " + i;
 
-  // Add event listener to each paragraph created
-  paragraph.addEventListener('click',respondToTheClick);
-
   // Append each paragraph as the last child of the div element
   myCustomDiv.appendChild(paragraph);
 }
 
+myCustomDiv.addEventListener('click',respondToTheClick);
+
 document.body.appendChild(myCustomDiv);
+
+/**
+ * Third Step to Refactoring: Using Event Delegation
+ * Since we want to be able to target specific paragraphs or elements within the div element
+ */
+
