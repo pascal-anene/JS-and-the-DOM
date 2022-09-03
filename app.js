@@ -171,7 +171,7 @@
 // // Create a div element
 // const myCustomDiv = document.createElement("div");
 
-// // Use a for loop to create 200 paragrpah elements with text content 
+// // Use a for loop to create 200 paragrpah elements with text content
 // for (let i = 1; i <= 200; i++) {
 //   const paragraph = document.createElement("p");
 
@@ -199,7 +199,7 @@
 //     console.log("This paragraph was clicked ");
 // }
 
-// // Use a for loop to create 200 paragrpah elements with text content 
+// // Use a for loop to create 200 paragrpah elements with text content
 // for (let i = 1; i <= 200; i++) {
 //   const paragraph = document.createElement("p");
 
@@ -226,7 +226,7 @@
 //     console.log("This paragraph was clicked ");
 // }
 
-// // Use a for loop to create 200 paragrpah elements with text content 
+// // Use a for loop to create 200 paragrpah elements with text content
 // for (let i = 1; i <= 200; i++) {
 //   const paragraph = document.createElement("p");
 
@@ -246,32 +246,72 @@
  * Since we want to be able to target specific paragraphs or elements within the div element
  */
 
-//Create a div element
-const myCustomDiv = document.createElement('div');
+// //Create a div element
+// const myCustomDiv = document.createElement("div");
 
-//Define listener function for our event listener, this time with the event parameter
-function respondToTheClick(event){
-    console.log("This paragraph was clicked " + event.target.textContent)
-}
+// //Define listener function for our event listener, this time with the event parameter
+// function respondToTheClick(event) {
+//   console.log("This paragraph was clicked " + event.target.textContent);
+// }
 
-for(let i = 0; i <= 200; i++){
+// for (let i = 0; i <= 200; i++) {
+//   const paragraph = document.createElement("p");
 
-    const paragraph = document.createElement('p');
+//   // Add content to the paragraph
+//   paragraph.textContent = "This is paragraph: " + i;
 
-    // Add content to the paragraph
-    paragraph.textContent = "This is paragraph: " + i;
+//   //Append each paragraph as the last child to the div element
+//   myCustomDiv.appendChild(paragraph);
+// }
 
-    //Append each paragraph as the last child to the div element
-    myCustomDiv.appendChild(paragraph);
+// myCustomDiv.addEventListener("click", respondToTheClick);
 
-}
-
-myCustomDiv.addEventListener('click', respondToTheClick);
-
-document.body.appendChild(myCustomDiv);
-
+// document.body.appendChild(myCustomDiv);
 
 /**
- * Another Example with Node Type Testing
+ * Another Example with Node Type Testing with unconnected code block
  */
+
+{/* <article id="content">
+
+  <p>
+    Brownie lollipop <span>carrot cake</span> gummies lemon drops sweet roll
+    dessert tiramisu. Pudding muffin <span>cotton candy</span> croissant
+    fruitcake tootsie roll. Jelly jujubes brownie. Marshmallow jujubes topping
+    sugar plum jelly jujubes chocolate.
+  </p>
+
+  <p>
+    Tart bonbon soufflé gummi bears. Donut marshmallow
+    <span>gingerbread cupcake</span> macaroon jujubes muffin. Soufflé candy
+    caramels tootsie roll powder sweet roll brownie <span>apple pie</span>
+    gummies. Fruitcake danish chocolate tootsie roll macaroon.
+  </p>
+
+</article>;
+
+// This will add an event listener to the <article> element
+document.querySelector('#content').addEventListener('click', function (evt) {
+
+    console.log('A span was clicked with text ' + evt.target.textContent);
+
+});
+
+//This will ensure that the click listener fires when a <span> element is clicked
+
+document.querySelector('#content').addEventListener('click', function(event){
+
+    if(event.target.nodeName === 'SPAN'){
+
+        console.log('A span was clicked with text ' + event.target.textContent);
+
+    }
+    
+}) */}
+
+/**
+ * Adding Favourite Buttons
+ * In this exercise, we will add buttons to the Nanodegree cards in the section of the page
+ */
+
 
