@@ -306,7 +306,7 @@
 //         console.log('A span was clicked with text ' + event.target.textContent);
 
 //     }
-    
+
 // }) */}
 
 /**
@@ -314,51 +314,60 @@
  * In this exercise, we will add buttons to the Nanodegree cards in the section of the page
  */
 
-
 //First we target and select the card containers we want to add the buttons to
 // I checked the html code and found the card conatainers with their classes
 //Remember the querySelectorAll() method returns a NodeList
 
-const cardList = document.querySelectorAll('.card__container');
+const cardList = document.querySelectorAll(".card__container");
 
-//Variables to store the textContent for the Button Elements; 
+//Variables to store the textContent for the Button Elements;
 //In a production programming, these strings might be retrieved from a Database or remote server or from a file asset
-//Think of what you've been doing with Databricks :) 
-const addFavouritesText = "ADD TO FAVOURITES";
-const removeFavouritesText = "REMOVE FROM FAVOURITES";
+//Think of what you've been doing with Databricks :)
+const addFavouritesText = "Add to Favourites";
+const removeFavouritesText = "Remove From Favourites";
 
+//Define Listener Function
+function toggleButtonContent(event) {
+  const target = event.target;
+
+  // Check if target is the Button
+  if (target.nodeName === "BUTTON") {
+    event.preventDefault();
+
+    if (target.textContent.startsWith("Add")) {
+      target.textContent = removeFavouritesText;
+
+      //Create a paragraph element to hold the favicon
+      const fav = document.createElement("p");
+      fav.textContent = "⭐ ⭐ ⭐";
+
+      // Append fav element to the title
+      target.parentElement.appendChild(fav);
+    } else {
+      //Resets the button content to the original text
+      target.textContent = addFavouritesText;
+
+      //Remove the favourites status bar
+      target.nextSibling.remove();
+    }
+  }
+}
 
 //We loop through each card using a for loop
 //We could use another loop method from the document class like the forEach()
 //However, that method is supported fully by all browsers
-for(let i = 0; i < cardList.length; i++){
+for (let i = 0; i < cardList.length; i++) {
+  // First we create the Button Element
+  let cardButton = document.createElement("button");
 
-    // First we create the Button Element
-    let cardButton = document.createElement('button');
-    
-    // Then we add the Original TextContent to the element
-    cardButton.textContent = addFavouritesText;
+  // Then we add the Original TextContent to the element
+  cardButton.textContent = addFavouritesText;
 
-    //Then we add the Styling classes using CSS Translated for the DOM
-    cardButton.classList.add("button","button--primary");
+  //Then we add the Styling classes using CSS Translated for the DOM
+  cardButton.classList.add("button", "button--primary");
 
-    //Then we add the newly styled Button Element using the appendChild method to the selected class
-    cardList[i].querySelector('.card--nanodegree__title').appendChild(cardButton);
+  //Then we add the newly styled Button Element using the appendChild method to the selected class
+  cardList[i].querySelector(".card--nanodegree__title").appendChild(cardButton);
 
+  cardList[i].addEventListener("click", toggleButtonContent);
 }
-
-function toggleButtonContent(event) {
-
-    if(event.target.nodeName === 'BUTTON'){
-
-        event.target.preventDefault(); 
-
-        
-
-    }
-
-}
-
-
-
-
