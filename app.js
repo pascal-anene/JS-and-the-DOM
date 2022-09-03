@@ -219,29 +219,59 @@
  * Attaching the Event Listener to the div element instead
  */
 
-// Create a div element
-const myCustomDiv = document.createElement("div");
+// // Create a div element
+// const myCustomDiv = document.createElement("div");
 
-function respondToTheClick(){
-    console.log("This paragraph was clicked ");
-}
+// function respondToTheClick(){
+//     console.log("This paragraph was clicked ");
+// }
 
-// Use a for loop to create 200 paragrpah elements with text content 
-for (let i = 1; i <= 200; i++) {
-  const paragraph = document.createElement("p");
+// // Use a for loop to create 200 paragrpah elements with text content 
+// for (let i = 1; i <= 200; i++) {
+//   const paragraph = document.createElement("p");
 
-  paragraph.textContent = "This is paragraph: " + i;
+//   // Add Content to the paragraph Element
+//   paragraph.textContent = "This is paragraph: " + i;
 
-  // Append each paragraph as the last child of the div element
-  myCustomDiv.appendChild(paragraph);
-}
+//   // Append each paragraph as the last child of the div element
+//   myCustomDiv.appendChild(paragraph);
+// }
 
-myCustomDiv.addEventListener('click',respondToTheClick);
+// myCustomDiv.addEventListener('click',respondToTheClick);
 
-document.body.appendChild(myCustomDiv);
+// document.body.appendChild(myCustomDiv);
 
 /**
  * Third Step to Refactoring: Using Event Delegation
  * Since we want to be able to target specific paragraphs or elements within the div element
+ */
+
+//Create a div element
+const myCustomDiv = document.createElement('div');
+
+//Define listener function for our event listener, this time with the event parameter
+function respondToTheClick(event){
+    console.log("This paragraph was clicked " + event.target.textContent)
+}
+
+for(let i = 0; i <= 200; i++){
+
+    const paragraph = document.createElement('p');
+
+    // Add content to the paragraph
+    paragraph.textContent = "This is paragraph: " + i;
+
+    //Append each paragraph as the last child to the div element
+    myCustomDiv.appendChild(paragraph);
+
+}
+
+myCustomDiv.addEventListener('click', respondToTheClick);
+
+document.body.appendChild(myCustomDiv);
+
+
+/**
+ * Another Example with Node Type Testing
  */
 
