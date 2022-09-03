@@ -272,46 +272,93 @@
  * Another Example with Node Type Testing with unconnected code block
  */
 
-{/* <article id="content">
+// {/* <article id="content">
 
-  <p>
-    Brownie lollipop <span>carrot cake</span> gummies lemon drops sweet roll
-    dessert tiramisu. Pudding muffin <span>cotton candy</span> croissant
-    fruitcake tootsie roll. Jelly jujubes brownie. Marshmallow jujubes topping
-    sugar plum jelly jujubes chocolate.
-  </p>
+//   <p>
+//     Brownie lollipop <span>carrot cake</span> gummies lemon drops sweet roll
+//     dessert tiramisu. Pudding muffin <span>cotton candy</span> croissant
+//     fruitcake tootsie roll. Jelly jujubes brownie. Marshmallow jujubes topping
+//     sugar plum jelly jujubes chocolate.
+//   </p>
 
-  <p>
-    Tart bonbon soufflé gummi bears. Donut marshmallow
-    <span>gingerbread cupcake</span> macaroon jujubes muffin. Soufflé candy
-    caramels tootsie roll powder sweet roll brownie <span>apple pie</span>
-    gummies. Fruitcake danish chocolate tootsie roll macaroon.
-  </p>
+//   <p>
+//     Tart bonbon soufflé gummi bears. Donut marshmallow
+//     <span>gingerbread cupcake</span> macaroon jujubes muffin. Soufflé candy
+//     caramels tootsie roll powder sweet roll brownie <span>apple pie</span>
+//     gummies. Fruitcake danish chocolate tootsie roll macaroon.
+//   </p>
 
-</article>;
+// </article>;
 
-// This will add an event listener to the <article> element
-document.querySelector('#content').addEventListener('click', function (evt) {
+// // This will add an event listener to the <article> element
+// document.querySelector('#content').addEventListener('click', function (evt) {
 
-    console.log('A span was clicked with text ' + evt.target.textContent);
+//     console.log('A span was clicked with text ' + evt.target.textContent);
 
-});
+// });
 
-//This will ensure that the click listener fires when a <span> element is clicked
+// //This will ensure that the click listener fires when a <span> element is clicked
 
-document.querySelector('#content').addEventListener('click', function(event){
+// document.querySelector('#content').addEventListener('click', function(event){
 
-    if(event.target.nodeName === 'SPAN'){
+//     if(event.target.nodeName === 'SPAN'){
 
-        console.log('A span was clicked with text ' + event.target.textContent);
+//         console.log('A span was clicked with text ' + event.target.textContent);
 
-    }
+//     }
     
-}) */}
+// }) */}
 
 /**
  * Adding Favourite Buttons
  * In this exercise, we will add buttons to the Nanodegree cards in the section of the page
  */
+
+
+//First we target and select the card containers we want to add the buttons to
+// I checked the html code and found the card conatainers with their classes
+//Remember the querySelectorAll() method returns a NodeList
+
+const cardList = document.querySelectorAll('.card__container');
+
+//Variables to store the textContent for the Button Elements; 
+//In a production programming, these strings might be retrieved from a Database or remote server or from a file asset
+//Think of what you've been doing with Databricks :) 
+const addFavouritesText = "ADD TO FAVOURITES";
+const removeFavouritesText = "REMOVE FROM FAVOURITES";
+
+
+//We loop through each card using a for loop
+//We could use another loop method from the document class like the forEach()
+//However, that method is supported fully by all browsers
+for(let i = 0; i < cardList.length; i++){
+
+    // First we create the Button Element
+    let cardButton = document.createElement('button');
+    
+    // Then we add the Original TextContent to the element
+    cardButton.textContent = addFavouritesText;
+
+    //Then we add the Styling classes using CSS Translated for the DOM
+    cardButton.classList.add("button","button--primary");
+
+    //Then we add the newly styled Button Element using the appendChild method to the selected class
+    cardList[i].querySelector('.card--nanodegree__title').appendChild(cardButton);
+
+}
+
+function toggleButtonContent(event) {
+
+    if(event.target.nodeName === 'BUTTON'){
+
+        event.target.preventDefault(); 
+
+        
+
+    }
+
+}
+
+
 
 
