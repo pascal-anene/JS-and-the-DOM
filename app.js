@@ -371,3 +371,5 @@ for (let i = 0; i < cardList.length; i++) {
 
   cardList[i].addEventListener("click", toggleButtonContent);
 }
+
+
